@@ -1,0 +1,2 @@
+[console_scripts]
+dst2ak-parse-headers = dst2ak.parse_headers:main

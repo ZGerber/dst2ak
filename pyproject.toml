@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dst2ak"
+version = "0.1.0"
+description = "DST to Awkward/Parquet converter"
+authors = [{name="Your Name"}]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "clang>=16.0.0",
+]
+
+[project.scripts]
+dst2ak-parse-headers = "dst2ak.parse_headers:main"

@@ -1,0 +1,47 @@
+[["recipes.stpln_dst".ops]]
+field = "jday"
+type = "i32"
+count = "nobj=3, &nobj"
+condition = "if ((rcode = dst_initbank_(&id, &ver, &stpln_blen, &stpln_maxlen, stpln_bank))) return rcode;"
+
+[["recipes.stpln_dst".ops]]
+field = "neye"
+type = "i32"
+count = "nobj=3, &nobj"
+condition = "if ((rcode = dst_packi4_    (&stpln_.jday, (nobj=3, &nobj), stpln_bank, &stpln_blen, &stpln_maxlen))) return rcode;"
+
+[["recipes.stpln_dst".ops]]
+field = "maxeye"
+type = "i32"
+count = "nobj=1, &nobj"
+condition = "//maxeye, if_eye"
+
+[["recipes.stpln_dst".ops]]
+field = "if_eye"
+type = "i32"
+count = "nobj=stpln_.maxeye, &nobj"
+condition = "if ((rcode = dst_packi4_( &stpln_.maxeye, (nobj=1, &nobj), stpln_bank, &stpln_blen, &stpln_maxlen))) return rcode;"
+
+[["recipes.stpln_dst".ops]]
+field = "bankid"
+type = "i32"
+count = "nobj=1, &nobj"
+condition = ""
+
+[["recipes.stpln_dst".ops]]
+field = "bankversion"
+type = "i32"
+count = "nobj=1, &nobj"
+condition = "if ((rcode = dst_unpacki4_( &bankid,      (nobj=1, &nobj), bank, &stpln_blen, &stpln_maxlen))) return rcode;"
+
+[["recipes.stpln_dst".ops]]
+field = "maxeye"
+type = "i32"
+count = "nobj=1, &nobj"
+condition = "// maxeye, if_eye"
+
+[["recipes.stpln_dst".ops]]
+field = "if_eye"
+type = "i32"
+count = "nobj=stpln_.maxeye, &nobj"
+condition = "if ((rcode = dst_unpacki4_( &stpln_.maxeye, (nobj=1, &nobj), bank, &stpln_blen, &stpln_maxlen))) return rcode;"

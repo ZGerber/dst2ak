@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: dst2ak
+Version: 0.1.0
+Summary: DST to Awkward/Parquet converter
+Author: Your Name
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: clang>=16.0.0
