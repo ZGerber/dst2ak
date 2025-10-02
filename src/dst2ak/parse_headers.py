@@ -9,8 +9,10 @@ import sys
 import argparse
 from pathlib import Path
 from clang.cindex import Index, Config, CursorKind, TypeKind
-from dst2ak import _auto_set_libclang
+# from dst2ak import _auto_set_libclang
 
+_config_path = os.environ.get("LIBCLANG_PATH", "/usr/lib/llvm-10/lib/libclang.so")
+Config.set_library_file(_config_path)
 
 C_TO_SCHEMA = {
     "int": "i32",
@@ -108,6 +110,7 @@ def parse_header(header, inc_dir, dst_types):
 
 
 def main():
+    # _auto_set_libclang()
     parser = argparse.ArgumentParser()
     parser.add_argument("--inc", default=os.path.join(os.environ.get("DSTDIR", ""), "inc"),
                         help="Path to inc/ directory (default: $DSTDIR/inc)")
@@ -137,5 +140,4 @@ def main():
 
 
 if __name__ == "__main__":
-    _auto_set_libclang()
     main()

@@ -52,7 +52,6 @@ def _unpack_values(data: bytes, offset: int, func: str, count: int) -> tuple[lis
         offset += size
     return values, offset
 
-
 def interpret_recipe(data: bytes, ops: list[dict]) -> dict:
     """Interpret bytes using the recipe ops with loop/guard/cond logic."""
     offset = 0
@@ -81,6 +80,8 @@ def interpret_recipe(data: bytes, ops: list[dict]) -> dict:
                 ctx = {**result, loop_var: i}
                 if "guard" in op:
                     if not _eval_expr(op["guard"], ctx):
+                        # guard false → skip without consuming bytes
+                        collected.append(None)
                         continue
                 count = _eval_expr(count_expr, ctx) if isinstance(count_expr, str) else int(count_expr)
                 vals, offset = _unpack_values(data, offset, func, count)

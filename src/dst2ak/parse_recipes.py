@@ -28,8 +28,8 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 SCHEMA_DIR = PROJECT_ROOT / "config" / "schemas"
 
 # ---------------------------------------------------------------------------
-# _config_path = os.environ.get("LIBCLANG_PATH", "/usr/lib/llvm-10/lib/libclang.so")
-# Config.set_library_file(_config_path)
+_config_path = os.environ.get("LIBCLANG_PATH", "/usr/lib/llvm-10/lib/libclang.so")
+Config.set_library_file(_config_path)
 
 def load_schema(bank_name: str) -> dict:
     """Load schema TOML for a given bank if available."""

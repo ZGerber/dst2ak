@@ -15,4 +15,4 @@ def _auto_set_libclang():
     Config.set_library_file(libclang_path)
 
 # Do NOT call here unconditionally
-# _auto_set_libclang()
+_auto_set_libclang()
