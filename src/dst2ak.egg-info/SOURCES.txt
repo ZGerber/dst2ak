@@ -1,10 +1,14 @@
 pyproject.toml
+src/dst2ak/__init__.py
 src/dst2ak/bankassembler.py
 src/dst2ak/blockreader.py
 src/dst2ak/eventassembler.py
 src/dst2ak/parse_headers.py
 src/dst2ak/parse_recipes.py
 src/dst2ak/parse_stpln.py
+src/dst2ak/recipe_loader.py
+src/dst2ak/recipe_reader.py
+src/dst2ak/test_stpln_reader.py
 src/dst2ak.egg-info/PKG-INFO
 src/dst2ak.egg-info/SOURCES.txt
 src/dst2ak.egg-info/dependency_links.txt

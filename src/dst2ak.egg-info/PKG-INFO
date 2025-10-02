@@ -6,3 +6,4 @@ Author: Your Name
 Requires-Python: >=3.10
 Description-Content-Type: text/markdown
 Requires-Dist: clang>=16.0.0
+Requires-Dist: tomli_w>=1.2.0

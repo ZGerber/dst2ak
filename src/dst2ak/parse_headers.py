@@ -9,9 +9,8 @@ import sys
 import argparse
 from pathlib import Path
 from clang.cindex import Index, Config, CursorKind, TypeKind
+from dst2ak import _auto_set_libclang
 
-# Fallback if libclang isn’t auto-detected
-Config.set_library_file("/usr/lib/llvm-20/lib/libclang.so")
 
 C_TO_SCHEMA = {
     "int": "i32",
@@ -138,4 +137,5 @@ def main():
 
 
 if __name__ == "__main__":
+    _auto_set_libclang()
     main()
